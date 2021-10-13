@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {catchError} from "rxjs/operators";
 import {EMPTY} from "rxjs";
+import {Team} from "./model/teamInfo";
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class TeamDashboardService {
 
 
   getTeam(teamName) {
-    return this.http.get(`${environment.api}team/${teamName}`).pipe(
+    return this.http.get<Team>(`${environment.api}team/${teamName}`).pipe(
       catchError(err => this.handleError(err))
     )
   }

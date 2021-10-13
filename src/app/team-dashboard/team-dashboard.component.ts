@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {map, switchMap} from "rxjs/operators";
-import {Observable} from "rxjs";
+import { Observable } from 'rxjs';
+import {map, switchMap, tap} from "rxjs/operators";
 import {TeamDashboardService} from "./team-dashboard.service";
-import {Team} from "./model/team";
+import {Team} from "./model/teamInfo";
+
 
 @Component({
   selector: 'app-team-dashboard',
@@ -19,8 +20,9 @@ export class TeamDashboardComponent implements OnInit {
     map(params => params.get('teamName'))
   );
 
-  team$: Observable<Team> = this.teamName$.pipe(
-    switchMap(teamName => this.teamService.getTeam(teamName))
+  team$:Observable<Team> = this.teamName$.pipe(
+    switchMap(teamName => this.teamService.getTeam(teamName)),
+    tap(console.log)
   );
 
   ngOnInit(): void {
