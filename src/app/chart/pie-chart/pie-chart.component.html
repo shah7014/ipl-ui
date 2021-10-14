@@ -1,0 +1,9 @@
+<div *ngIf="data" #containerRef>
+  <ngx-charts-pie-chart
+    [view]="[containerRef.offsetWidth, 230]"
+    [scheme]="colorScheme"
+    [results]="data"
+  >
+  </ngx-charts-pie-chart>
+</div>
+

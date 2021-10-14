@@ -4,7 +4,7 @@
       <h1 class="team-name">{{teamInfo.teamName}}</h1>
     </div>
     <div class="win-loss-section">
-      win/loss
+      <app-pie-chart [totalMatches]="teamInfo.totalMatches" [wins]="teamInfo.totalWins"></app-pie-chart>
     </div>
     <div class="latest-match-section">
       <h3>Latest Matches</h3>
