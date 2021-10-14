@@ -1,3 +1,25 @@
-<ng-container *ngIf="team$ | async">
-  <h1>team dashboard</h1>
+<ng-container *ngIf="team$ | async as teamInfo">
+  <div class="team">
+    <div class="team-name-section">
+      <h1 class="team-name">{{teamInfo.teamName}}</h1>
+    </div>
+    <div class="win-loss-section">
+      win/loss
+    </div>
+    <div class="latest-match-section">
+      <h3>Latest Matches</h3>
+      <app-match-full-detail [latestMatch]="teamInfo.fullDetailMatch"
+                             [primaryTeam]="teamInfo.teamName"></app-match-full-detail>
+    </div>
+    <div class="last-matches-section" *ngFor="let match of teamInfo.limitedDetailMatch">
+      <app-match-limited-detail [match]="match" [primaryTeam]="teamInfo.teamName"></app-match-limited-detail>
+    </div>
+    <div class="more-details">
+      <a href="#">More ></a>
+    </div>
+  </div>
 </ng-container>
+
+<div *ngIf="error">
+  <h1>Team name is invalid</h1>
+</div>

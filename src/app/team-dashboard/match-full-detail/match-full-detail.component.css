@@ -1,0 +1,21 @@
+.match-full-detail {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.right-side-detail {
+  text-align: right;
+}
+
+.right-side-detail p {
+  margin-bottom: 12px;
+}
+
+.match-date, .match-venue, .match-winner {
+  margin-top: 10px;
+}
+
+

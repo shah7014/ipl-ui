@@ -1,0 +1,8 @@
+.match-limited-detail {
+  height: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.match-limited-detail .match-winner {
+  margin-top: 10px;
+}

@@ -1,0 +1,21 @@
+<div class="match-full-detail" [ngClass]="backgroundColorClass">
+  <div class="left-side-detail">
+    <span class="vs">vs</span>
+    <h1 class="opponent-team"><a [routerLink]="['/teams', opponentTeam]">{{opponentTeam}}</a></h1>
+    <h2 class="match-date">{{latestMatch.date}}</h2>
+    <h3 class="match-venue">{{latestMatch.venue}}</h3>
+    <h3 class="match-winner">{{latestMatch.matchWinner}} won by {{latestMatch.resultMargin}} {{latestMatch.result}}</h3>
+  </div>
+
+  <div class="right-side-detail">
+    <h3>First Innings</h3>
+    <p>{{latestMatch.team1}}</p>
+    <h3>Second Innings</h3>
+    <p>{{latestMatch.team2}}</p>
+    <h3>Man of the Match</h3>
+    <p>{{latestMatch.playerOfMatch}}</p>
+    <h3>Umpires</h3>
+    <p>{{latestMatch.umpire1}}, {{latestMatch.umpire2}}</p>
+  </div>
+</div>
+

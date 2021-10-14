@@ -1,0 +1,5 @@
+<div [ngClass]="backgroundColorClass" class="match-limited-detail">
+  <span class="vs">vs</span>
+  <h1><a [routerLink]="['/teams', opponentTeam]">{{opponentTeam}}</a></h1>
+  <p class="match-winner">{{match.matchWinner}} won by {{match.resultMargin}} {{match.result}}</p>
+</div>

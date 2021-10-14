@@ -1,0 +1,9 @@
+<ng-container *ngIf="matches$ | async as matches">
+  <div *ngFor="let match of matches">
+    <app-match-full-detail [latestMatch]="match" [primaryTeam]="primaryTeam"></app-match-full-detail>
+  </div>
+</ng-container>
+
+<div *ngIf="error">
+  <h1>Team name is invalid</h1>
+</div>

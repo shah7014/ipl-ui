@@ -1,0 +1,16 @@
+export class Match {
+  id;
+  city;
+  date;
+  playerOfMatch;
+  venue;
+  team1;
+  team2;
+  tossWinner;
+  tossDecision;
+  matchWinner;
+  result;
+  resultMargin;
+  umpire1;
+  umpire2;
+}

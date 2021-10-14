@@ -1,0 +1,36 @@
+.team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.team .team-name-section {
+  grid-column: span 3;
+  /*for putting header to left*/
+  justify-self: left;
+  /*for putting header to bottom of div*/
+  align-self: end;
+}
+
+.team-name {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+
+.team .win-loss-section {
+  grid-column: span 1;
+  justify-self: center;
+}
+
+.team .latest-match-section {
+  grid-column: span 4;
+}
+
+.team .more-details {
+  align-self: center;
+  justify-self: center;
+  font-size: 1.5rem;
+}
