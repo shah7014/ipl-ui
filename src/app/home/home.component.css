@@ -1,0 +1,19 @@
+.team-grid {
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+.team-grid h1 {
+  text-align: center;
+  padding-top: 50px;
+}
+.team-grid .team {
+  border: 1px solid white;
+  height: 150px;
+  cursor: pointer;
+}
+.app-heading {
+  text-align: center;
+}

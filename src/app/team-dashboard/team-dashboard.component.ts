@@ -15,6 +15,7 @@ export class TeamDashboardComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private teamService: DashboardService) {
   }
+  startYear = 2020;
 
   error = null;
 

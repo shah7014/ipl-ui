@@ -1,0 +1,16 @@
+.match-dashboard {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 4fr;
+  grid-column-gap: 20px;
+  padding-top: 20px;
+}
+
+.match-dashboard .year {
+  justify-self: start;
+}
+
+.match h1 {
+  margin-bottom: 10px;
+}
+

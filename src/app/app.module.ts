@@ -12,6 +12,7 @@ import {HomeComponent} from './home/home.component';
 import {PieChartComponent} from './chart/pie-chart/pie-chart.component';
 import {PieChartModule} from "@swimlane/ngx-charts";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { YearSelectorComponent } from './match-dashboard/year-selector/year-selector.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatchLimitedDetailComponent,
     MatchDashboardComponent,
     HomeComponent,
-    PieChartComponent
+    PieChartComponent,
+    YearSelectorComponent
   ],
   imports: [
     BrowserModule,

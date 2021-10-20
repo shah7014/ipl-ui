@@ -1,7 +1,23 @@
 <ng-container *ngIf="matches$ | async as matches">
-  <div *ngFor="let match of matches">
-    <app-match-full-detail [latestMatch]="match" [primaryTeam]="primaryTeam"></app-match-full-detail>
+  <div class="match-dashboard">
+    <div class="year">
+      <h3>Select year</h3>
+      <app-year-selector [teamName]="primaryTeam"></app-year-selector>
+    </div>
+
+    <div class="match">
+      <h1>{{primaryTeam}} matches in {{year}}</h1>
+      <div *ngIf="matches.length !== 0">
+        <div *ngFor="let match of matches">
+          <app-match-full-detail [latestMatch]="match" [primaryTeam]="primaryTeam"></app-match-full-detail>
+        </div>
+      </div>
+      <div *ngIf="matches.length === 0">
+        <p>There is no data for this team for selected year</p>
+      </div>
+    </div>
   </div>
+
 </ng-container>
 
 <div *ngIf="error">

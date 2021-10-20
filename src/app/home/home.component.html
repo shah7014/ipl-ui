@@ -1,1 +1,16 @@
-<p>home works!</p>
+<ng-container *ngIf="teamNames$ | async as teams">
+  <div class="home-page">
+    <div class="app-heading">
+      <h1>IPL dashboard</h1>
+    </div>
+    <div class="team-grid" *ngIf="teams && teams.length!==0">
+      <div *ngFor="let team of teams" class="team" [routerLink]="['/teams', team]">
+        <h1>{{team}}</h1>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div *ngIf="error">
+  <p>{{error}}</p>
+</div>

@@ -13,12 +13,16 @@ import {Match} from "../team-dashboard/model/match";
 export class MatchDashboardComponent implements OnInit {
   error;
   primaryTeam;
+  year;
 
   constructor(private matchService: DashboardService, private route: ActivatedRoute) { }
 
   params$ = this.route.paramMap.pipe(
     map(params => ({teamName: params.get('teamName'), year: params.get('matchYear')})),
-    tap(data => this.primaryTeam = data.teamName)
+    tap(data => {
+      this.primaryTeam = data.teamName;
+      this.year = data.year;
+    })
   );
 
   matches$: Observable<Match[]> = this.params$.pipe(

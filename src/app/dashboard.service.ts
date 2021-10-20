@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../environments/environment";
 import {catchError} from "rxjs/operators";
-import {EMPTY, Observable, of} from "rxjs";
+import {EMPTY, Observable, of, throwError} from "rxjs";
 import {Team} from "./team-dashboard/model/teamInfo";
 import {Match} from "./team-dashboard/model/match";
 
@@ -27,8 +27,14 @@ export class DashboardService {
     );
   }
 
+  getAllTeams(): Observable<string[]> {
+    return this.http.get<string[]>(`${environment.api}team/allteams`).pipe(
+      catchError(err => this.handleError(err))
+    )
+  }
+
   private handleError(err) {
     console.log('err:- ', err);
-    return of(err);
+    return throwError(err);
   }
 }

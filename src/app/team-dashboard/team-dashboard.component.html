@@ -15,7 +15,7 @@
       <app-match-limited-detail [match]="match" [primaryTeam]="teamInfo.teamName"></app-match-limited-detail>
     </div>
     <div class="more-details">
-      <a href="#">More ></a>
+      <a [routerLink]="['/teams', teamInfo.teamName, 'matches', startYear]">More ></a>
     </div>
   </div>
 </ng-container>
